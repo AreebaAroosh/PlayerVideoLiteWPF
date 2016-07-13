@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PlayerVideoLiteWPF.control;
 
 namespace PlayerVideoLiteWPF
 {
@@ -20,9 +21,39 @@ namespace PlayerVideoLiteWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        //VARIABLES
+        private KeyControl keyControl;
+        
+        //FUNCTIONS
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void init()
+        {
+            keyControl = new KeyControl();
+
+            setResolution();
+        }
+
+        //RESOLUTION
+        private void setResolution()
+        {
+            MainView.Width = PlayerVideoLiteWPF.Properties.Settings.Default.AppWidth;
+            MainView.Height = PlayerVideoLiteWPF.Properties.Settings.Default.AppHeight;
+
+            if(PlayerVideoLiteWPF.Properties.Settings.Default.AppFullscreen)
+            {
+                MainView.WindowState = WindowState.Maximized;
+            }
+        }
+
+
+        //EVENTS
+        private void MainView_Initialized(object sender, EventArgs e)
+        {
+            init();
         }
     }
 }
