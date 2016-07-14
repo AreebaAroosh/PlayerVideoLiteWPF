@@ -22,6 +22,7 @@ namespace PlayerVideoLiteWPF
     public partial class MainWindow : Window
     {
         //VARIABLES
+        private XMLResourceControl xmlResourceControl;
         private KeyControl keyControl;
         
         //FUNCTIONS
@@ -32,8 +33,15 @@ namespace PlayerVideoLiteWPF
 
         private void init()
         {
-            keyControl = new KeyControl();
+            //xml resource control
+            xmlResourceControl = new XMLResourceControl();
+            xmlResourceControl.init();
 
+            //keyboard event control
+            keyControl = new KeyControl();
+            keyControl.init(this);
+
+            //set settings resolution
             setResolution();
         }
 
@@ -44,9 +52,7 @@ namespace PlayerVideoLiteWPF
             MainView.Height = PlayerVideoLiteWPF.Properties.Settings.Default.AppHeight;
 
             if(PlayerVideoLiteWPF.Properties.Settings.Default.AppFullscreen)
-            {
                 MainView.WindowState = WindowState.Maximized;
-            }
         }
 
 
@@ -54,6 +60,12 @@ namespace PlayerVideoLiteWPF
         private void MainView_Initialized(object sender, EventArgs e)
         {
             init();
+        }
+
+        private void MainView_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (keyControl != null)
+                keyControl.checkKeyUp(e);
         }
     }
 }

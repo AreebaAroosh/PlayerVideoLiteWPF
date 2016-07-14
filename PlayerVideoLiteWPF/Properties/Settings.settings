@@ -11,5 +11,11 @@
     <Setting Name="AppFullscreen" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="ResourceName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">resources</Value>
+    </Setting>
+    <Setting Name="XMLFilename" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\config.xml</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

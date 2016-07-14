@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" 
         Height="500" Width="500" 
-        WindowStyle="None" Initialized="MainView_Initialized">
+        WindowStyle="None" Initialized="MainView_Initialized" KeyUp="MainView_KeyUp">
     <Grid x:Name="MainGrid">
         
     </Grid>

@@ -49,5 +49,23 @@ namespace PlayerVideoLiteWPF.Properties {
                 return ((bool)(this["AppFullscreen"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("resources")]
+        public string ResourceName {
+            get {
+                return ((string)(this["ResourceName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\config.xml")]
+        public string XMLFilename {
+            get {
+                return ((string)(this["XMLFilename"]));
+            }
+        }
     }
 }
