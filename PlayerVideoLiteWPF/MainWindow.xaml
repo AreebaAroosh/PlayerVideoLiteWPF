@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PlayerVideoLiteWPF"
         mc:Ignorable="d"
-        Title="MainWindow" 
-        Height="500" Width="500" 
+        Title="MainWindow"
+        Background="Black"
+        Height="500" Width="500"
         WindowStyle="None" Initialized="MainView_Initialized" KeyUp="MainView_KeyUp">
     <Grid x:Name="MainGrid">
-        
+        <MediaElement Name="videoMedia" LoadedBehavior="Manual" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="500" Stretch="Fill" MediaEnded="mediaPlayerView_MediaEnded" MediaFailed="mediaPlayerView_MediaFailed" MediaOpened="mediaPlayerView_MediaOpened"/>
     </Grid>
 </Window>

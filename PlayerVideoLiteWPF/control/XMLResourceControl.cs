@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PlayerVideoLiteWPF.model;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -15,6 +16,8 @@ namespace PlayerVideoLiteWPF.control
         private String folderPath;
         private String fileFullPath;
         private XmlDocument xmlDoc;
+
+        private MainModel mainModel = new MainModel();
 
         //FUNCTIONS
         public void init()
@@ -43,9 +46,16 @@ namespace PlayerVideoLiteWPF.control
             xmlDoc = new XmlDocument();
             xmlDoc.Load(fileFullPath);
 
-            
+            setupModel();
         }
 
+        //SETUP XML MODEL
+        private void setupModel()
+        {
+            mainModel.setupModel(xmlDoc);
+            Debug.WriteLine("NUM MEDIA: " + mainModel.numMedia);
+        }
+        
 
         //CREATE MISSING FILES
         private void createMissingFolder()
@@ -72,6 +82,13 @@ namespace PlayerVideoLiteWPF.control
             configElement.AppendChild(mediaElement);
 
             doc.Save(fileFullPath);
+        }
+
+        //GET VARIABLES
+        public MainModel Model
+        {
+            get { return mainModel; }
+            //set { model = value; }
         }
     }
 }

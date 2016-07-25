@@ -25,7 +25,7 @@ namespace PlayerVideoLiteWPF.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1920")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1024")]
         public int AppWidth {
             get {
                 return ((int)(this["AppWidth"]));
@@ -34,7 +34,7 @@ namespace PlayerVideoLiteWPF.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1080")]
+        [global::System.Configuration.DefaultSettingValueAttribute("768")]
         public int AppHeight {
             get {
                 return ((int)(this["AppHeight"]));

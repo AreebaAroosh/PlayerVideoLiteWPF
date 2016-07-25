@@ -37,6 +37,8 @@ namespace PlayerVideoLiteWPF.control
         {
             if(e.Key == Key.Escape)
                 checkFullScreen();
+            else
+                app.selectMedia(e.Key.ToString());
         }
     }
 }
